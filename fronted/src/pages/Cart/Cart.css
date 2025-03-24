@@ -97,3 +97,7 @@
         justify-content: start;
     }
 }
+
+.cart-total-details .Bold{
+    font-weight: bold;
+}
