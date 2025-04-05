@@ -6,6 +6,19 @@ const LoginPopup = ({setShowLogin}) => {
 
     const[currState,setCurrState]=useState("Sign Up");
 
+    const[data,setData]=useState({
+      name:"",
+      email:"",
+      password:"" 
+    });
+
+    const onChangeHandler=(event)=>{
+      name:event.target.name;
+      value:event.target.value;
+      setData(data=>({...data,[name]:value}));
+    }
+
+
   return (
     <div className='login-popup'>
       <form className="login-popup-container">
@@ -14,7 +27,7 @@ const LoginPopup = ({setShowLogin}) => {
           <img onClick={()=>setShowLogin(false)} src={assets.cross_icon} alt="" />
         </div>
         <div className="login-popup-inputs">
-          {currState==="Login"?<></>:<input type="text" placeholder='Your name' required />}
+          {currState==="Login"?<></>:<input  type="text" placeholder='Your name' required />}
           <input type="email" placeholder='Your email' required />
           <input type="password" placeholder='password' required />
         </div>
