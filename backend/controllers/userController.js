@@ -20,8 +20,8 @@ const loginUser=async(req,res)=>{
         if(!isMatch){
             return res.json({success:false,message:"Invalid Credentials"});
         }
-        const Token=createToken(user._id);
-        res.json({success:true,Token});
+        const token=createToken(user._id);
+        res.json({success:true,token});
     } catch (error) {
         console.log(error);
         res.json({success:false,message:"error"});
